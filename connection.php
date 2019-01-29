@@ -7,7 +7,7 @@ $pass = '';
 try {
 	$connection = new PDO($link, $user, $pass);
 
-	echo "Connected";
+	//echo "Connected";
 
 	/*foreach ($connection->query('SELECT * FROM COLORS') as $row) {
 		print_r($row);
@@ -16,8 +16,6 @@ try {
 } catch (PDOException $e) {
 	print "Error!: " . $e->getMessage() . "<br>";
 	die();
-} finally{
-	$connection = null;
 }
 
 ?>
