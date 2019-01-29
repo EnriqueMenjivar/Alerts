@@ -2,15 +2,25 @@
 	
 include_once 'connection.php';
 
-$sql = 'SELECT * FROM COLORS';
-
-$gsent = $connection->prepare($sql);
+//READ
+$sql_read = 'SELECT * FROM COLORS';
+$gsent = $connection->prepare($sql_read);
 $gsent->execute();
-
-//Retorns an Array
-$resultset = $gsent->fetchAll();
+$resultset = $gsent->fetchAll(); //Retorns an Array
 //var_dump($resultset)
 
+//ADD
+if($_POST){
+	$color = $_POST['color'];
+	$description = $_POST['description'];
+
+	$slq_add = 'INSERT INTO COLORS (COLOR, DESCRIPTION) VALUES (?,?)';
+	$statement_add = $connection->prepare($slq_add);
+	$statement_add->execute(array($color, $description));
+
+	header('location:index.php');
+
+}
 ?>
 
 <!doctype html>
@@ -37,6 +47,14 @@ $resultset = $gsent->fetchAll();
   						<?php echo $color['description']; ?>
 					</div>
 				<?php endforeach ?>
+    		</div>
+    		<div class="col-md-6">
+    			<h2>ADD ELEMENTS</h2>
+    			<form method="post">
+    				<input type="text" name="color" class="form-control">
+    				<input type="text" name="description" class="form-control mt-3">
+    				<button type="submit" class="btn btn-primary mt-3">Add</button>
+    			</form>
     		</div>
     	</div>
     </div>
