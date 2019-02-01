@@ -50,9 +50,9 @@ if($_GET){
     <title>Colors Alerts</title>
   </head>
   <body>
-    <div class="container mt-5">
+    <div class="container mt-5 bg-light rounded">
     	<div class="row">
-    		<div class="col-md-6">
+    		<div class="col-md-6 my-4">
 
     			<?php foreach ($resultset as $color): ?>
 	    			<div class="alert alert-<?php echo $color['color']; ?> text-uppercase" role="alert">
@@ -64,7 +64,8 @@ if($_GET){
 					</div>
 				<?php endforeach ?>
     		</div>
-    		<div class="col-md-6">
+
+    		<div class="col-md-6 my-4">
 
     			<?php if(!$_GET): ?>
 	    			<h2>ADD ELEMENTS</h2>
@@ -85,10 +86,23 @@ if($_GET){
 	    			</form>
     			<?php endif ?>
 
+          <hr class="my-4">
+          <div class="row">
+            <div class="col-md-6 my-2">
+              <button class="btn btn-dark" onclick="get('color')">Color</button>
+              <div id="color"></div>
+            </div>
+            <div class="col-md-6 my-2">
+              <button class="btn btn-dark" onclick="get('description')">Description</button>
+              <div id="description"></div>
+            </div>
+          </div>
+
     		</div>
     	</div>
     </div>
-
+    
+    <script type="text/javascript" src="query.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
