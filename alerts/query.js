@@ -1,9 +1,9 @@
 function get(column){
-  fetch('http://localhost/php/colors_alerts/query.php')
+  fetch('http://localhost/php/colors_alerts/alerts/query.php')
   .then(resultset=>resultset.json())
   .then(resultset=>{
     
-    console.log(resultset)
+    //console.log(resultset)
     var result = document.getElementById(column);
     var col = document.getElementById('color');
     var des = document.getElementById('description');

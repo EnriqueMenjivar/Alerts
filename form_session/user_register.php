@@ -17,12 +17,13 @@
 		<div class="row">
 			<div class="col-md-4"></div>
 			<div class="col-md-4 bg-light rounded">
-				<h3 class="text-center mt-3">Login</h3>
-				<form action="form_session/login.php" method="post">
-					<input type="text" name="login_name" placeholder="type your name" class="form-control mt-3 ">
-					<input type="password" name="login_pass" placeholder="type your password" class="form-control mt-3">
-					<button type="submit" class="btn btn-primary my-3 ">Sing in</button>	
-					<a href="form_session/user_register.php" class="ml-5 pl-5">Create an account</a>
+				<h3 class="text-center mt-3">User Register</h3>
+				<form action="add_user.php" method="post">
+					<input type="text" name="name" placeholder="type your name" class="form-control mt-3">
+					<input type="password" name="pass1" placeholder="type your password" class="form-control mt-3">
+					<input type="password" name="pass2" placeholder="type your password again" class="form-control mt-3">
+					<button type="submit" class="btn btn-primary my-3">Save</button>
+					<a href="../index.php" class="pl-5 ml-5">Login</a>
 				</form>
 			</div>
 			<div class="col-md-4"></div>

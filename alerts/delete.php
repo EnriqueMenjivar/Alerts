@@ -1,6 +1,6 @@
 <?php 
 
-include_once 'connection.php';
+include_once '../connection.php';
 
 $id = $_GET['id'];
 
@@ -10,5 +10,5 @@ $statement_delete->execute(array($id));
 
 $sql_delete = null;
 $connection = null;
-header('location:index.php')
+header('location:index_alerts.php');
 ?>

@@ -1,6 +1,6 @@
 <?php 
 
-include_once 'connection.php';
+include_once '../connection.php';
 
 $sql_query = 'SELECT * FROM colors';
 
