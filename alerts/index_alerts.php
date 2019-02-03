@@ -8,11 +8,9 @@ if(isset($_SESSION['admin'])){
 
   $current_user = $_SESSION['admin'];
   echo "<div $class_b ><strong> Welcome $current_user </strong> $tag_a </div>";
-
+  
 }else{
-
   header('location:../index.php');
-
 }
 ?>
 
